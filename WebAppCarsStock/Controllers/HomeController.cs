@@ -27,6 +27,7 @@ namespace WebAppCarsStock.Controllers
         [Route("/GetCarsDetails")]
         public IActionResult GetCarsDetails(CarsDetails cars)
         {
+            Helpers.HttpContext.PostHttpAction(cars);
             var linkedListManual = GetLinkedList(cars.ListAgent);
             var firstAdded = linkedListManual.GetFirstAdded();
             return Json(firstAdded.data);
