@@ -14,7 +14,7 @@ if (sendButton) {
             cache: true,
             data: dataInputs,
             success: function (data) {
-                document.innerHTML(data);
+                window.alert(data);
             }
         });
     });

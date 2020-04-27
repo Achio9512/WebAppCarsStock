@@ -49,5 +49,23 @@ namespace WebAppCarsStock.ListImplementation
                 current.next = toAdd;
             }
         }
+
+        public Node GetFirstAdded()
+        {
+            // The value of temp is returned as the value of the method. 
+            // The following declaration initializes temp to the appropriate 
+            // default value for type T. The default value is returned if the 
+            // list is empty.
+             Node temp = new Node();
+
+            Node current = head;
+            while (current != null)
+            {
+                temp.data = current.data;
+                current = current.next;
+            }
+            return temp;
+        }
+
     }
 }

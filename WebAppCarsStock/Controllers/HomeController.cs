@@ -28,7 +28,8 @@ namespace WebAppCarsStock.Controllers
         public IActionResult GetCarsDetails(CarsDetails cars)
         {
             var linkedListManual = GetLinkedList(cars.ListAgent);
-            return Json(new { success = true });
+            var firstAdded = linkedListManual.GetFirstAdded();
+            return Json(firstAdded.data);
         }
         
         public IActionResult Privacy()
