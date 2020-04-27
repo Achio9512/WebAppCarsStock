@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <form class="contact100-form validate-form" data-form-container>
+                <span class="contact100-form-title">
+                    Send Us A Message
+                </span>
+
+                <div class="wrap-input100 validate-input" data-validate="First Name is required">
+                    <label class="label-input100" for="firstName">First name</label>
+                    <input id="firstName" class="input100" type="text" name="firstName" placeholder="Enter your name...">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Last Name is required">
+                    <label class="label-input100" for="lastName">Last name</label>
+                    <input id="lastName" class="input100" type="text" name="lastName" placeholder="Enter your name...">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Phone">
+                    <label class="label-input100" for="phone">Phone</label>
+                    <input id="phone" class="input100" type="tel" name="phone" placeholder="Enter your phone...">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Message is required">
+                    <label class="label-input100" for="comments">Comment</label>
+                    <textarea id="comments" class="input100" name="comments" placeholder="Type your message here..."></textarea>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Valid name is required: Audi">
+                    <label class="label-input100" for="carName">Car Name</label>
+                    <input id="carName" class="input100" type="text" name="carName" placeholder="Enter your Car name...">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Valid price is required: 500000">
+                    <label class="label-input100" for="carPrice">Price</label>
+                    <input id="carPrice" class="input100" type="text" name="carPrice" placeholder="Enter price...">
+                    <span class="focus-input100"></span>
+                </div>
+                
+                <div class="wrap-input100">
+                    <div class="label-input100">Agent?</div>
+                    <div>
+                        <select class="js-select2" name="service">
+                            <option>chooses</option>
+                            <option>Design</option>
+                            <option>eCommerce</option>
+                            <option>Services</option>
+                        </select>
+                        <div class="dropDownSelect2"></div>
+                    </div>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-contact100-form-btn">
+                    <button type="button" class="contact100-form-btn">
+                        Send
+                    </button>
+                </div>
+
+                <div class="contact100-form-social flex-c-m">
+                    <a href="#" class="contact100-form-social-item flex-c-m bg1 m-r-5">
+                        <i class="fa fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="#" class="contact100-form-social-item flex-c-m bg2 m-r-5">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="#" class="contact100-form-social-item flex-c-m bg3">
+                        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </form>
+
+            <div class="contact100-more flex-col-c-m" style="background-image: url('images/audi.jpg');">
+            </div>
+        </div>
+    </div>
