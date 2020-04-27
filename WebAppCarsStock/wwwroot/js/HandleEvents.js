@@ -5,16 +5,15 @@ if (sendButton) {
         var formContainer = document.querySelector("[data-form-container]");
         var dataInputs = "";
         if (formContainer) {
-            dataInputs = jQuery(formContainer).find("#firstName,#lastName,#phone,#carName,#carPrice,#comments,#carName").serialize();
+            dataInputs = jQuery(formContainer).find("#firstName,#lastName,#phone,#carName,#carPrice,#comments,#carName,#email").serialize();
         }
-        
         jQuery.ajax({
             url: "/GetCarsDetails",
             type: "get",
             cache: true,
             data: dataInputs,
             success: function (data) {
-                window.alert(data);
+                window.alert("Last Agent in the linkedListManual" + data);
             }
         });
     });
