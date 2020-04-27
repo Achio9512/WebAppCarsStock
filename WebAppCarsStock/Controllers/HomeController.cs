@@ -2,6 +2,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Nancy.Json;
 using Newtonsoft.Json;
 using WebAppCarsStock.ListImplementation;
 using WebAppCarsStock.Models;
@@ -22,11 +23,11 @@ namespace WebAppCarsStock.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("/GetCarsDetails")]
         public IActionResult GetCarsDetails(CarsDetails cars)
         {
-            GetLinkedList(cars.ListAgent);
+            var linkedListManual = GetLinkedList(cars.ListAgent);
             return Json(new { success = true });
         }
         
@@ -49,7 +50,7 @@ namespace WebAppCarsStock.Controllers
             {
                 listFromScrath.AddFirst(t);
             }
-            return null;
+            return listFromScrath;
         }
 
         public ListOfAgents GetContentFromJson<T>()

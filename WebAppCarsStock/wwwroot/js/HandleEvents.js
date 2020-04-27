@@ -10,11 +10,11 @@ if (sendButton) {
         
         jQuery.ajax({
             url: "/GetCarsDetails",
-            type: "post",
+            type: "get",
             cache: true,
             data: dataInputs,
             success: function (data) {
-                console.log(data);
+                document.innerHTML(data);
             }
         });
     });
