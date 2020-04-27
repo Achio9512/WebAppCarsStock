@@ -26,13 +26,7 @@ namespace WebAppCarsStock.Controllers
         [Route("/GetCarsDetails")]
         public IActionResult GetCarsDetails(CarsDetails cars)
         {
-            LinkedList listFromScrath = new LinkedList();
-            cars.ListAgent = GetContentFromJson<ListOfAgents>();
-            foreach (var t in cars.ListAgent.Agent)
-            {
-                listFromScrath.AddFirst(t);
-            }
-
+            GetLinkedList(cars.ListAgent);
             return Json(new { success = true });
         }
         
@@ -45,6 +39,17 @@ namespace WebAppCarsStock.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private LinkedList GetLinkedList(ListOfAgents agents)
+        {
+            LinkedList listFromScrath = new LinkedList();
+            agents = GetContentFromJson<ListOfAgents>();
+            foreach (var t in agents.Agent)
+            {
+                listFromScrath.AddFirst(t);
+            }
+            return null;
         }
 
         public ListOfAgents GetContentFromJson<T>()
