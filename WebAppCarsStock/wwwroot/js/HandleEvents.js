@@ -13,7 +13,7 @@ if (sendButton) {
             cache: true,
             data: dataInputs,
             success: function (data) {
-                window.alert("Last Agent in the linkedListManual" + data);
+                window.alert("Last Agent in the linkedListManual " + data.name);
             }
         });
     });
