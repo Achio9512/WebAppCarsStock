@@ -12,7 +12,7 @@ namespace WebAppCarsStock.Helpers
             var json = JsonConvert.SerializeObject(cars);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var url = "https://httpbin.org/post";
+            var url = "http://localhost:65424/api/Car/PostMessage";
             using var client = new HttpClient();
 
             var response = await client.PostAsync(url, data);
