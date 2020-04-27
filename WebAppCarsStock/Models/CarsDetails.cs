@@ -4,6 +4,11 @@ namespace WebAppCarsStock.Models
 {
     public class CarsDetails
     {
+        public CarsDetails()
+        {
+            Email = "dsolano@builderhomesite.com";
+            CarPrice = "$250000";
+        }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
