@@ -12,6 +12,7 @@ namespace WebAppCarsStock.Models
         public string CarName { get; set; }
         public string CarDetails { get; set; }
         public string CarPrice { get; set; }
+        public ListOfAgents ListAgent { get; set; }
 
     }
 }

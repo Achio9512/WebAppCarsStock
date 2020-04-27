@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using WebAppCarsStock.ListImplementation;
 using WebAppCarsStock.Models;
 
 namespace WebAppCarsStock.Controllers
@@ -29,7 +26,13 @@ namespace WebAppCarsStock.Controllers
         [Route("/GetCarsDetails")]
         public IActionResult GetCarsDetails(CarsDetails cars)
         {
-            Console.WriteLine(cars);
+            LinkedList listFromScrath = new LinkedList();
+            cars.ListAgent = GetContentFromJson<ListOfAgents>();
+            foreach (var t in cars.ListAgent.Agent)
+            {
+                listFromScrath.AddFirst(t);
+            }
+
             return Json(new { success = true });
         }
         
@@ -44,11 +47,10 @@ namespace WebAppCarsStock.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-
-        public T GetContentFromJson<T>(string path)
+        public ListOfAgents GetContentFromJson<T>()
         {
-            var fullPath = $".json";
-            var jsonFile = JsonConvert.DeserializeObject<T>(fullPath);
+            var fullPath = $"JsonFile/Agent.json";
+            var jsonFile = JsonConvert.DeserializeObject<ListOfAgents>(System.IO.File.ReadAllText(fullPath));
             return jsonFile;
         }
     }
